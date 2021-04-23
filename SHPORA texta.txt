@@ -1,0 +1,32 @@
+// This file was decompiled using SASCM.ini published on 2020-11-11
+{$CLEO .cs}
+
+0000: NOP
+/// if- одно условие 
+/// if and - 2 или более проверок (до 7)
+/// if or  - один из двух или более проверок (до 7) верно
+
+/// Локальные переменные - 0@ 1@ 2@ 3@  (ai 33@)
+/// Глобальные переменные - @CJ @CLEO1337
+
+/// int-любое число
+/// float- дробное число
+/// string-любое слово
+
+:1
+0001: wait 0 ms 
+00D6: if or
+0AB0:   is_key_pressed 114
+0AB0:   is_key_pressed 114  
+004D: jump_if_false @2
+0ACD: show_text_highpriority "" time 1000 
+0002: jump @1 
+
+:2
+0001: wait 0 ms 
+00D6: if or
+0AB0:   is_key_pressed 115
+0AB0:   is_key_pressed 115  
+004D: jump_if_false @1 
+0ACD: show_text_highpriority "" time 1000 
+0002: jump @1 

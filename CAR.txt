@@ -1,0 +1,23 @@
+{$CLEO}
+{$NOSOURCE}
+0000:
+
+:1
+wait 0
+0ADC:   test_cheat "CAR"
+jf @1
+0247: load_model #SULTAN
+038B: load_requested_models
+
+:2
+wait 0
+0248:   model #SULTAN available
+jf @2
+04C4: store_coords_to 0@ 1@ 2@ from_actor $PLAYER_ACTOR with_offset 0.0 0.0 -1.1
+00A5: 3@ = create_car #SULTAN at 0@ 1@ 2@
+0172: 4@ = actor $PLAYER_ACTOR Z_angle
+0175: set_car 3@ Z_angle_to 4@
+036A: put_actor $PLAYER_ACTOR in_car 3@
+02EB: restore_camera_with_jumpcut
+0249: release_model #SULTAN
+JUMP @1

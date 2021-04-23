@@ -1,0 +1,22 @@
+// This file was decompiled using SASCM.ini published on 2020-11-11
+{$CLEO .cs}
+
+0000: NOP 
+
+:Label
+0001: wait 0 ms 
+00D6: if or 
+0ADC:   test_cheat "AIMON"
+0ADC:   test_cheat "AIMON"
+004D: jump_if_false @Label2 
+018C: play_sound 1056 at 0.0 0.0 0.0 
+0002: jump @Label2
+
+:Label2
+wait 0
+if or
+0ADC:   test_cheat "AIMOFF"
+0ADC:   test_cheat "AIMOFF"
+jf @Label
+018C: play_sound 1057 at 0.0 0.0 0.0
+jump @Label

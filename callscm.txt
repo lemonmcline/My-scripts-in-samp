@@ -1,0 +1,40 @@
+{$CLEO}
+0000:
+
+// (0AB1) callscm
+
+:Label
+wait 0
+if
+0AB0:   is_key_pressed 114
+jf @Label2                       0@ 1@   2@
+0AB1: cleo_call @CallscmLabel кол-во параметров 3 параметры 2 19@ 50 90.0 возвращаемые параметры 14@ 28@
+jump @Label2 
+
+:Label2
+wait 0
+if
+0AB0:   is_key_pressed 115
+jf @Label3
+jump @Label3
+
+:Label3
+wait 0
+if
+0AB0:   is_key_pressed 116
+jf @Label
+jump @Label
+
+:CallscmLabel
+04DD: 25@ = actor $PLAYER_ACTOR armour
+018C: play_sound 0@ at 0.0 0.0 0.0
+018C: play_sound 1@ at 0.0 0.0 0.0
+018C: play_sound 1052 at 0.0 0.0 0.0
+018C: play_sound 1052 at 0.0 0.0 0.0
+018C: play_sound 1052 at 0.0 0.0 0.0
+018C: play_sound 1052 at 0.0 0.0 0.0
+018C: play_sound 1052 at 0.0 0.0 0.0
+018C: play_sound 1052 at 0.0 0.0 0.0
+018C: play_sound 1052 at 0.0 0.0 0.0
+018C: play_sound 1052 at 0.0 0.0 0.0
+0AB2: cleo_return 1 25@ 66

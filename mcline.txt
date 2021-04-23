@@ -1,0 +1,14 @@
+{$CLEO}
+{$NOSOURCE}
+0000:
+
+:SAMPAv
+wait 0 
+0AFA:  is_samp_available
+jf @SAMPAv
+0B34: samp register_client_command "MCLINE" to_label @MCLINE
+0BDE: pause_thread 0
+
+:MCLINE
+0AF8: samp add_message_to_chat "|OWNER|MCLINE|OWNER|" color 0x03FF35
+0B43: samp cmd_ret

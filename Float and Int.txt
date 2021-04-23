@@ -1,0 +1,22 @@
+{$CLEO}
+{$NOSOURCE}
+0000:
+
+/// [Main]
+//// 2 = 230 int
+//// 3 = 230.0 float
+
+/// (0AF1|0AF0) int
+/// (0AF3|0AF2) float
+
+:Label
+wait 0
+0ADC:   test_cheat "Z"
+jf @Label
+0AF1: write_int 230 to_ini_file "cleo\I'mLemon.ini" section "Main" key "2"
+0AF0: 0@ = read_int_from_ini_file "cleo\I'mLemon.ini" section "Main" key "2"
+
+0AF3: write_float 230.0 to_ini_file "\I'mLemon.ini" section "Main" key "3"
+0AF2: 0@ = read_float_from_ini_file "cleo\I'mLemon.ini" section "Main" key "3"
+jump @Label 
+

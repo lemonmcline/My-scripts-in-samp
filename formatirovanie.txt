@@ -1,0 +1,16 @@
+{$CLEO}
+{$NOSOURCE}
+0000:
+
+:1
+wait 0 
+if and
+0ADC:   test_cheat "SSB"
+0AFA:  is_samp_available
+jf @1
+0AC8: 2@ = allocate_memory_size 256
+0A8E: 1@ = 6421 + 62521
+0AD3: 2@ = format "6421 + 62521 = %i" 1@
+0AD1: show_formatted_text_highpriority "%s" time 2000 2@
+0AC9: free_allocated_memory 2@
+jump @1

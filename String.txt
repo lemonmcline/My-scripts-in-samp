@@ -1,0 +1,15 @@
+{$CLEO}
+{$NOSOURCE}
+0000:
+
+/// (0AF4|0AF5) string
+
+:1
+wait 0
+0ADC:   test_cheat "SSB"
+jf @1
+0AC8: 26@ = allocate_memory_size 316
+0AD3: 26@ = format "FolowMe "
+0AF5: write_string 26@ to_ini_file "cleo\I'mLemon.ini" section "SectionName" key "stringKey"
+0AC9: free_allocated_memory 26@
+JUMP @1

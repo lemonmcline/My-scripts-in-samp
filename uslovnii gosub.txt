@@ -1,0 +1,28 @@
+{$CLEO}
+0000:
+
+:Label
+wait 0
+if
+0050: gosub @Ifgosub
+jf @Label2
+0ACD: show_text_highpriority "FUCK YOU" time 1000
+jump @Label2
+
+:Label2
+wait 0
+if
+0050: gosub @Ifgosub
+jf @Label
+0ACD: show_text_highpriority "FUCK OFF" time 1000
+jump @Label
+
+:Ifgosub
+if and
+00DF:   actor $PLAYER_ACTOR driving
+0256:   player $PLAYER_CHAR defined
+jf @Ifgosub2
+0051: return
+
+:Ifgosub2
+0051: return

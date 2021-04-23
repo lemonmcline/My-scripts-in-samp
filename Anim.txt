@@ -1,0 +1,75 @@
+{$CLEO}
+{$NOSOURCE}
+0000:
+
+/// (0605) - Анимация сбиватеся 
+/// (0812) - Анимация не сбивается 
+/// (0A1A) - Анимация с возможностью ходьбы 
+
+:1
+wait 0
+0ADC:   test_cheat "1"
+JF @2
+04ED: load_animation  "BMX"
+
+
+:LoadedCheck1 
+wait 0
+04EE:   animation "BMX" loaded
+jf @LoadedCheck1
+0605: actor $PLAYER_ACTOR perform_animation "bunnyhop" IFP "BMX" framedelta 4.0 loop 1 lockX 0 lockY 0 lockF 0 time 1000
+04EF: release_animation "BMX"
+
+
+
+:2
+0ADC:   test_cheat "2" 
+jf @3
+04ED: load_animation  "BMX"
+
+:LoadedCheck2
+wait 0
+04EE:   animation "BMX" loaded
+jf @LoadedCheck2
+0605: actor $PLAYER_ACTOR perform_animation "back" IFP "BMX" framedelta 4.0 loop 1 lockX 0 lockY 0 lockF 0 time 1000
+04EF: release_animation "BMX"
+
+
+:3
+0ADC:   test_cheat "3"
+jf @4
+04ED: load_animation  "BMX"
+
+:LoadedCheck3
+wait 0
+04EE:   animation "BMX" loaded
+jf @LoadedCheck3
+0605: actor $PLAYER_ACTOR perform_animation "sprint" IFP "BMX" framedelta 4.0 loop 1 lockX 0 lockY 0 lockF 0 time 1000
+04EF: release_animation "BMX"
+
+
+:4
+0ADC:   test_cheat "4"
+jf @5
+04ED: load_animation  "BBAL"
+
+:LoadedCheck4
+wait 0
+04EE:   animation "BBAL" loaded
+jf @LoadedCheck4
+0605: actor $PLAYER_ACTOR perform_animation "run" IFP "BBAL" framedelta 4.0 loop 1 lockX 0 lockY 0 lockF 0 time 1000
+04EF: release_animation "BBAL"
+
+
+:5
+0ADC:   test_cheat "5"
+jf @1
+04ED: load_animation  "BBAL"
+
+:LoadedCheck5
+wait 0 
+04EE:   animation "BBAL" loaded
+jf @LoadedCheck5
+0605: actor $PLAYER_ACTOR perform_animation "Jump_End" IFP "BBAL" framedelta 4.0 loop 1 lockX 0 lockY 0 lockF 0 time 1000
+04EF: release_animation "BBAL"
+jump @1

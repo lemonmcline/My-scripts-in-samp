@@ -1,0 +1,14 @@
+// This file was decompiled using SASCM.ini published on 2020-11-11
+{$CLEO .cs}
+
+0000: NOP 
+
+:Noname_2
+0001: wait 0 ms 
+0ADC:   test_cheat "KILL" 
+004D: jump_if_false @Noname_2 
+0A96: 0@ = ped $PLAYER_ACTOR struct 
+0A8E: 1@ = 0@ + 1344 // int 
+0A8D: 2@ = read_memory 1@ size 4 virtual_protect 1 
+0A8C: write_memory 1@ size 4 value 0.0 virtual_protect 1 
+0002: jump @Noname_2 

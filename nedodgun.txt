@@ -1,0 +1,27 @@
+{$CLEO}
+{$NOSOURCE}
+0000: 
+
+:1
+wait 0
+0ADC:   test_cheat "GUN"
+jf @1 
+0247: load_model #SNIPER
+0247: load_model #DESERT_EAGLE
+0247: load_model #KATANA
+038B: load_requested_models
+
+:2
+wait 0
+if and
+0248:   model #SNIPER available
+0248:   model #DESERT_EAGLE available
+0248:   model #KATANA available
+jf @2
+01B2: give_actor $PLAYER_ACTOR weapon 34 ammo 50
+01B2: give_actor $PLAYER_ACTOR weapon 24 ammo 50
+01B2: give_actor $PLAYER_ACTOR weapon 8 ammo 1
+0249: release_model #SNIPER
+0249: release_model #DESERT_EAGLE
+0249: release_model #KATANA
+jump @1 

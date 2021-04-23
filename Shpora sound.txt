@@ -1,0 +1,13 @@
+{$CLEO}
+0000:
+
+/// Ѕесконечный цикл | необ€зательно использовать wait 0
+///  онечный цикл | об€зательно использовать wait 0
+
+:label
+wait 0
+if
+0AB0:   is_key_pressed 114
+jf @label
+018C: play_sound 1052 at 0.0 0.0 0.0
+jump @label

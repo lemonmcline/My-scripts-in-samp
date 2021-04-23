@@ -1,0 +1,41 @@
+// This file was decompiled using SASCM.ini published on 2020-11-11
+{$CLEO .cs}
+
+0000: NOP 
+
+:Noname_2
+0001: wait 0 ms 
+00D6: if 
+0AB0:   is_key_pressed 114 
+004D: jump_if_false @Noname_35 
+Noname_101()
+0002: jump @Noname_35 
+
+:Noname_35
+0001: wait 0 ms 
+00D6: if 
+0AB0:   is_key_pressed 115 
+004D: jump_if_false @Noname_68 
+Noname_101()
+0002: jump @Noname_68 
+
+:Noname_68
+0001: wait 0 ms 
+00D6: if 
+0AB0:   is_key_pressed 116 
+004D: jump_if_false @Noname_2 
+Noname_101()
+0002: jump @Noname_2 
+
+:Noname_101
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+018C: play_sound 1052 at 0.0 0.0 0.0 
+0051: return 

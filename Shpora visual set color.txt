@@ -1,0 +1,20 @@
+// This file was decompiled using SASCM.ini published on 2020-11-11
+{$CLEO .cs}
+
+0000: NOP 
+
+/// actor $PLAYER_ACTOR ///handle
+/// char  $PLAYER_CHAR ///handle
+
+///03C0: 2@ = actor $PLAYER_ACTOR car ///handle
+
+///0006: 0@ = -1
+
+:1
+0001: wait 0 ms 
+00D6: if 
+00DF:   actor $PLAYER_ACTOR driving 
+004D: jump_if_false @1 
+03C0: 2@ = actor $PLAYER_ACTOR car 
+0229: set_car 2@ primary_color_to 6@ secondary_color_to 29@ 
+0002: jump @1 
